@@ -6,3 +6,5 @@ export const options = [
   { label: 'Europe', value: 'europe' },
   { label: 'Oceania', value: 'oceania' },
 ];
+
+export const array = [{}, {}, {}, {}, {}, {}, {}, {}, {}, {}];

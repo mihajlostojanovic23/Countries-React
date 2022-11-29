@@ -1,19 +1,25 @@
 import { useParams } from 'react-router-dom';
 import { Navbar } from '../../components';
+import NotFound from '../Home/NotFound/NotFound';
 import CountryDetails from './CountryDetails';
 
 import useCountry from './useCountry';
 
 function Country() {
   let { name } = useParams();
-  const { data } = useCountry(`alpha/${name}`);
-  console.log(data);
+  const { data, status } = useCountry(`alpha/${name}`);
+
+  if (status === 400) {
+    return <NotFound />;
+  }
+
   return (
     <div>
       <Navbar />
       {data.length > 0 &&
-        data.map((item: any) => (
+        data.map((item: any, index: any) => (
           <CountryDetails
+            key={index}
             name={item.name}
             population={item.population}
             region={item.region}

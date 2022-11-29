@@ -1,6 +1,6 @@
 import { useContext } from 'react';
-import { Box, MenuItem, TextField } from '@mui/material';
 import { options } from '../../../../../data/data';
+
 import { DataContext } from '../../../../../context/dataContext';
 
 function SelectArea() {
@@ -8,12 +8,13 @@ function SelectArea() {
 
   return (
     <div className="mr-[40px]">
-      <Box>
+      {/*     <Box>
         <TextField
           label="Select country"
           onChange={(e) => setSelect(e.target.value)}
           className="w-[200px]"
           select
+          style={{ backgroundColor: 'white', color: 'black' }}
         >
           {options.map((item, index): any => (
             <MenuItem key={index} value={item.value}>
@@ -21,7 +22,15 @@ function SelectArea() {
             </MenuItem>
           ))}
         </TextField>
-      </Box>
+      </Box> */}
+      <select
+        onChange={(e) => setSelect(e.target.value)}
+        className="w-[200px] h-[50px] dark:bg-[#2b3945] dark:text-[white] focus:border-[black]"
+      >
+        {options.map((option: any) => (
+          <option value={option.value}>{option.label}</option>
+        ))}
+      </select>
     </div>
   );
 }

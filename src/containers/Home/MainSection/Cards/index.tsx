@@ -1,8 +1,7 @@
 import useFetch from '../../../../components/hooks/useFetch';
 import Sceleton from '../Sceleton';
 import Card from './Card';
-
-const array = [{}, {}, {}, {}, {}, {}, {}, {}];
+import { array } from '../../../../data/data';
 
 function Cards() {
   const { data, isError, isLoading } = useFetch();
@@ -26,7 +25,7 @@ function Cards() {
   }
 
   return (
-    <div className="flex flex-wrap justify-center items-center">
+    <div className="flex flex-wrap justify-center">
       {data &&
         data?.map((cards: any, index: any) => <Card key={index} {...cards} />)}
     </div>

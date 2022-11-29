@@ -1,4 +1,3 @@
-import { TextField } from '@mui/material';
 import React, { useContext, useEffect } from 'react';
 import { DataContext } from '../../../../../context/dataContext';
 
@@ -15,11 +14,11 @@ function Search() {
   }, [search]);
   return (
     <div className="ml-[40px]">
-      <TextField
-        id="outlined-search"
-        label="Search field"
-        type="search"
+      <input
+        type="text"
         onChange={handle}
+        placeholder="Search"
+        className="input w-[300px] h-[50px] placeholder:dark:text-[white] dark:bg-[#2b3945] border-0 shadow-lg text-[white] focus:outline-none focus:border-none focus:border-0"
       />
     </div>
   );
