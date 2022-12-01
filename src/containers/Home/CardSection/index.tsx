@@ -1,10 +1,11 @@
 //Components
-import Sceleton from '../Sceleton/index';
+
 import Card from './Card';
 import NotFound from '../../../components/NotFound';
 
 //Hook
 import useFetch from '../../../hooks/useFetch';
+import Skeleton from '../Skeleton';
 
 export interface ICard {
   name: { common: string; official: string; nativeName: Object };
@@ -24,7 +25,7 @@ function Cards() {
   const { data, isError, isLoading } = useFetch();
   const skeletonCardList = [];
   for (let i = 0; i < 10; i++) {
-    skeletonCardList.push(<Sceleton key={i} />);
+    skeletonCardList.push(<Skeleton key={i} />);
   }
 
   if (isLoading) {

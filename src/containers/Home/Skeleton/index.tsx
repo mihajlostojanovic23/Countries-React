@@ -1,4 +1,4 @@
-function Sceleton() {
+function Skeleton() {
   return (
     <div className="card dark: m-[20px] h-[350px] w-[300px] cursor-pointer rounded-[10px] bg-[#d6d6d6] shadow-md dark:bg-[#dadada]">
       <div
@@ -27,4 +27,4 @@ function Sceleton() {
   );
 }
 
-export default Sceleton;
+export default Skeleton;
