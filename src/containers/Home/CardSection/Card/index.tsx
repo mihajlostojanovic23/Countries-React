@@ -1,6 +1,10 @@
-import React, { useContext } from 'react';
+import { useContext } from 'react';
 import { Link } from 'react-router-dom';
-import { DataContext } from '../../../../../context/dataContext';
+import { DataContext } from '../../../../context/dataContext';
+
+// Context
+
+// Type
 interface Country {
   name: { common: string; official: string; nativeName: Object };
   tld: string[];
@@ -19,7 +23,7 @@ function Card({ population, name, region, flags, capital, cca3 }: Country) {
   const { setSearch } = useContext(DataContext);
 
   return (
-    <div className="card shadow-lg w-[300px] max-h-[400px] min-h-[350px] m-[20px] rounded-[10px] flex flex-col  dark:bg-[#2b3945] ">
+    <div className="card m-[20px] flex max-h-[400px] min-h-[350px] w-[300px] flex-col rounded-[10px] shadow-lg  dark:bg-[#2b3945] ">
       <Link
         to={`/${cca3}`}
         onClick={() => setSearch('')}
@@ -27,7 +31,7 @@ function Card({ population, name, region, flags, capital, cca3 }: Country) {
       >
         <img
           src={flags.svg}
-          className="rounded-t-[10px] min-h-[200px] max-h-[200px] w-[300px] object-cover "
+          className="max-h-[200px] min-h-[200px] w-[300px] rounded-t-[10px] object-cover "
           alt=""
         />
       </Link>

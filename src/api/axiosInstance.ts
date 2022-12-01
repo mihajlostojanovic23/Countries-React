@@ -1,6 +1,6 @@
 import axios from 'axios';
 const instance = axios.create({
-  baseURL: 'https://restcountries.com/v3.1/',
+  baseURL: process.env.REACT_APP_BASE_URL,
 });
 
 export default instance;

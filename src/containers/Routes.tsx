@@ -1,8 +1,9 @@
 import { Routes as Switch, Route } from 'react-router-dom';
+
 // Pages
-import NotFound from './Home/NotFound/NotFound';
-import Home from './Home/Home';
-import Country from './Country/Country';
+import Home from './Home';
+import Country from './Country';
+import NotFound from '../components/NotFound';
 
 export default function Routes() {
   return (

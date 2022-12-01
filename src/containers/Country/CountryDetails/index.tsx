@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 
+// Type
 interface Details {
   name: { common: string; official: string };
   population: number;
@@ -22,23 +23,23 @@ function CountryDetails({
   flags,
 }: Details) {
   return (
-    <div className="dark:bg-[#202c37] bg-[#ffffff]">
+    <div className="bg-[#ffffff] dark:bg-[#202c37]">
       <Link to={'/'}>
-        <button className="w-[200px] h-[50px] dark:text-[white] border-[2px] absolute left-[60px] top-[200px]">
+        <button className="absolute left-[60px] top-[200px] h-[50px] w-[200px] border-[2px] dark:text-[white]">
           Back
         </button>
       </Link>
 
-      <div className="country-details w-[100%] bg-[#ffffff]  h-[90.9vh] flex justify-evenly dark:bg-[#202c37]  items-center  ">
-        <div className="image  flex justify-center w-[50%]">
+      <div className="country-details flex h-[100vh]  w-[100%] items-center justify-evenly bg-[#ffffff]  dark:bg-[#202c37]  ">
+        <div className="image  flex w-[50%] justify-center">
           <img
             src={flags.svg}
-            className="w-[500px] h-[400px] object-cover shadow-lg"
+            className="h-[400px] w-[500px] object-cover shadow-2xl"
             alt="Nece"
           />
         </div>
-        <div className="details w-[50%] flex flex-col justify-center h-[600px] ">
-          <span className="mr-[30px] text-[40px] my-[30px] font-bold dark:text-[white]">
+        <div className="details flex h-[600px] w-[50%] flex-col justify-center ">
+          <span className="my-[30px] mr-[30px] text-[40px] font-bold dark:text-[white]">
             {name.common}
           </span>
           <div className="other_details  flex  justify-start">
@@ -57,7 +58,7 @@ function CountryDetails({
           <div className="dark:text-[white]">
             Border Countries:
             {borders &&
-              borders.map((item, index): any => (
+              borders.map((item, index: number) => (
                 <Link to={`/${item}`} key={index} className="w-[100px]">
                   <button className="m-[10px] w-[100px] border-[2px]">
                     {item}

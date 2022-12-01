@@ -7,14 +7,20 @@ interface iDataValueContext {
   setSelect: Dispatch<SetStateAction<string>>;
 }
 
-export const DataContext = createContext<iDataValueContext>({
+type DataContextProviderProps = {
+  children: React.ReactNode;
+};
+
+const initialState = {
   search: '',
   setSearch: () => {},
   select: '',
   setSelect: () => {},
-});
+};
 
-export default function DataProvider({ children }: any) {
+export const DataContext = createContext<iDataValueContext>(initialState);
+
+export default function DataProvider({ children }: DataContextProviderProps) {
   const [search, setSearch] = useState('');
   const [select, setSelect] = useState('');
   return (

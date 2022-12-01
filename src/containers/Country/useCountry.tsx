@@ -2,9 +2,9 @@ import { useEffect, useState } from 'react';
 
 import axios from '../../api/axiosInstance';
 
-function useCountry(url: any) {
-  const [data, setData] = useState<any>([]);
-  const [status, setStatus] = useState<any>();
+function useCountry(url: string) {
+  const [data, setData] = useState([]);
+  const [status, setStatus] = useState();
   useEffect(() => {
     (async function () {
       try {

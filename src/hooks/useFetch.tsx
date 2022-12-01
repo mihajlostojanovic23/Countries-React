@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState } from 'react';
-import { DataContext } from '../../context/dataContext';
-import axios from '../../api/axiosInstance';
+import { DataContext } from '../context/dataContext';
+import axios from '../api/axiosInstance';
 
 function useFetch() {
   const { search, select } = useContext(DataContext);

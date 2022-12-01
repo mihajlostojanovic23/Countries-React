@@ -1,19 +1,21 @@
 import { BrowserRouter as Router } from 'react-router-dom';
+import Navbar from './components/Navbar';
 
-import DataProvider from './context/dataContext';
+// Routes
 import Routes from './containers/Routes';
-import { ThemeProvider } from './context/themeContext';
+
+// Context
+import DataProvider from './context/dataContext';
 
 function App() {
   return (
     <div className="App">
-      <ThemeProvider>
-        <DataProvider>
-          <Router>
-            <Routes />
-          </Router>
-        </DataProvider>
-      </ThemeProvider>
+      <DataProvider>
+        <Router>
+          <Navbar />
+          <Routes />
+        </Router>
+      </DataProvider>
     </div>
   );
 }
