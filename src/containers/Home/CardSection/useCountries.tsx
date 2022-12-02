@@ -1,7 +1,12 @@
 import { useContext, useEffect, useState } from 'react';
-import { DataContext } from '../context/dataContext';
-import axios from '../api/axiosInstance';
 
+// Api
+import axios from '../../../api/axiosInstance';
+
+// Context
+import { DataContext } from '../../../context/dataContext';
+
+//! Todo for Nasko: Export fetch functions in api component
 function useFetch() {
   const { search, select } = useContext(DataContext);
   const [data, setData] = useState([]);

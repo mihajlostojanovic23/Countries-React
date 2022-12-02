@@ -1,37 +1,21 @@
 //Components
-
 import Card from './Card';
 import NotFound from '../../../components/NotFound';
 
 //Hook
-import useFetch from '../../../hooks/useFetch';
+import useFetch from './useCountries';
 import Skeleton from '../Skeleton';
 
-export interface ICard {
-  name: { common: string; official: string; nativeName: Object };
-  tld: string[];
-  cca3: string;
-  currencies: Object;
-  capital: string[];
-  region: string;
-  subregion: string;
-  languages: Object;
-  borders: String[];
-  flags: { svg: string };
-  population: number;
-}
+// Type
+import { ICard } from '../../../types';
 
-function Cards() {
+function CardSection() {
   const { data, isError, isLoading } = useFetch();
-  const skeletonCardList = [];
-  for (let i = 0; i < 10; i++) {
-    skeletonCardList.push(<Skeleton key={i} />);
-  }
 
   if (isLoading) {
     return (
       <div className="flex flex-wrap items-center justify-center">
-        {skeletonCardList}
+        <Skeleton />
       </div>
     );
   }
@@ -54,4 +38,4 @@ function Cards() {
   );
 }
 
-export default Cards;
+export default CardSection;

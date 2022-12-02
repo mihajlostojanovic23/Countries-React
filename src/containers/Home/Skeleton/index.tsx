@@ -1,9 +1,9 @@
-function Skeleton() {
+function SkeletonCard() {
   return (
     <div className="card dark: m-[20px] h-[350px] w-[300px] cursor-pointer rounded-[10px] bg-[#d6d6d6] shadow-md dark:bg-[#dadada]">
       <div
         role="status"
-        className=" max-w-sm animate-pulse rounded shadow md:p-6 "
+        className=" max-w-sm animate-pulse rounded p-6 shadow "
       >
         <div className="mb-4 flex h-48 w-[100%] items-center justify-center rounded bg-[#5a5a5a] dark:bg-gray-700">
           <svg
@@ -25,6 +25,16 @@ function Skeleton() {
       </div>
     </div>
   );
+}
+
+function Skeleton() {
+  const cardList = [];
+
+  for (let i = 0; i < 10; i++) {
+    cardList.push(<SkeletonCard key={i} />);
+  }
+
+  return <>{cardList}</>;
 }
 
 export default Skeleton;

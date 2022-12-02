@@ -1,7 +1,9 @@
 // Hook
+import useTheme from './useTheme';
+
+// Icons
 import IconDark from '../../../assets/img/iconDark';
 import IconLight from '../../../assets/img/iconLight';
-import useTheme from './useTheme';
 
 function Theme() {
   const { theme, handleThemeSwitch } = useTheme();

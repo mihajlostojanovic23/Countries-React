@@ -5,7 +5,7 @@ function Search() {
   const handle = useSearch();
 
   return (
-    <div className="ml-[40px]">
+    <div className="sm:ml-[0px] md:ml-[40px]">
       <input
         type="text"
         onChange={handle}
